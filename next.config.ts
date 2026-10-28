@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  // `cacheComponents` stays off: the portfolio is a fully static site that
+  // relies on `generateStaticParams` + `dynamicParams` for project/blog
+  // routes. Turn it on only if you need PPR-style caching.
+  cacheComponents: false,
   turbopack: {
     rules: {
       "*.css": {

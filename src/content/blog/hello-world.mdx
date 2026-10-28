@@ -1,0 +1,50 @@
+---
+title: "Hello world: how this portfolio is built"
+description: "A walkthrough of the architecture behind Anurag.dev — typed content configuration, MDX posts and a design system that stays out of the way. (Sample draft — edit or delete this file.)"
+date: "2026-10-15"
+tags: ["Next.js", "TypeScript", "Portfolio"]
+category: "Engineering"
+draft: true
+---
+
+This is a **draft post** that ships with the portfolio so you can see how the
+MDX pipeline behaves end-to-end.
+
+Drafts are excluded from the blog index, search and sitemap — this article is
+only reachable via its direct URL. Publish it (or replace it) by editing the
+frontmatter above.
+
+## Adding your own post
+
+Create a new file in `src/content/blog/`, for example:
+
+```
+src/content/blog/my-first-post.mdx
+```
+
+…add frontmatter with `title`, `description`, `date`, `tags` and `category`,
+and start writing Markdown below it. That's the entire publishing workflow —
+no components to touch.
+
+## A few things worth trying
+
+- Standard Markdown: **bold**, _italic_, `inline code`, links, lists.
+- Fenced code blocks:
+
+```ts
+export function greet(name: string): string {
+  return `Hello, ${name}!`;
+}
+```
+
+- Blockquotes for callouts:
+
+> Write the article you needed when you were stuck.
+
+## The architecture in one paragraph
+
+Content lives in typed configuration files under `src/config`, sections are
+assembled from that configuration at build time, and blog posts compile from
+MDX. Everything is server-rendered by default; only the interactive pieces —
+navigation, filters, forms and the rotating hero text — ship as client
+components.
